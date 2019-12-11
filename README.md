@@ -4,8 +4,18 @@
 
 > 此项目旨在提供开箱即用的快速搭建SDK或者web components的种子项目。
 
+## useage
+
+```
+git clone ...
+npm install 
+npm run dev 
+npm run doc
+npm run build
+```
 
 ## 文档
+
 ```
 dist/jsdoc/svelte-sdk-starter/1.0.0/index.html
 
