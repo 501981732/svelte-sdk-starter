@@ -1,0 +1,31 @@
+{
+    "tags": {
+        "allowUnknownTags": true
+    },
+    "source": {
+        "include": ["./src/"],
+        "exclude": [],
+        "includePattern": "\\.(js)$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "plugins": [
+    ],
+    "markdown": {
+
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false,
+        "default": {
+            "outputSourceFiles": true
+        }
+    },
+    "opts": {
+        "template": "templates/default",
+        "encoding": "utf8",
+        "destination": "./dist/jsdoc/",
+        "recurse": true,
+        "package": "./package.json",
+        "reademe": "./READEME.md"
+    }
+}

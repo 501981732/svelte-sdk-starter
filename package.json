@@ -1,0 +1,54 @@
+{
+  "name": "svelte-sdk-starter",
+  "version": "1.0.0",
+  "scripts": {
+    "doc": "jsdoc -c ./jsdoc.conf.json -R ./README.md",
+    "build": "rollup -c && npm run doc",
+    "dev": "rollup -c -w",
+    "start": "sirv dist",
+    "arthur": "rollup -c  && npm run doc"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/runtime": "^7.7.4",
+    "babel-eslint": "^10.0.3",
+    "eslint-plugin-react": "^7.16.0",
+    "husky": "^3.1.0",
+    "jsdoc": "^3.6.3",
+    "lint-staged": "^9.4.3",
+    "node-sass": "^4.13.0",
+    "postcss-flexbugs-fixes": "^4.1.0",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-px-to-viewport": "^1.1.1",
+    "prettier": "^1.19.1",
+    "prettier-plugin-svelte": "^0.7.0",
+    "rollup": "^1.12.0",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-dev": "^1.1.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-terser": "^5.1.2",
+    "sass": "^1.23.7",
+    "svelte": "^3.0.0",
+    "svelte-preprocess": "^3.2.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,svelte,json,css,scss,md}": [
+      "prettier --single-quote --tab-width 4  --write --svelte-sort-order scripts-markup-styles ./**/*.svelte",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "sirv-cli": "^0.4.4"
+  }
+}
