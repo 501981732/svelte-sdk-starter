@@ -2,11 +2,11 @@
   "name": "svelte-sdk-starter",
   "version": "1.0.0",
   "scripts": {
+    "clean": "rm -rf dist/build",
     "doc": "jsdoc -c ./jsdoc.conf.json -R ./README.md",
-    "build": "rollup -c && npm run doc",
-    "dev": "rollup -c -w",
-    "start": "sirv dist",
-    "arthur": "rollup -c  && npm run doc"
+    "build": "npm run clean && rollup -c && npm run doc",
+    "dev": "npm run clean && rollup -c -w",
+    "start": "sirv dist"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
