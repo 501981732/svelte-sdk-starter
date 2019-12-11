@@ -36,6 +36,10 @@ window.XXSDK({
 
 ```
 
+## screenshots
+
+![image](https://pic1.58cdn.com.cn/nowater/cxnomark/n_v2e9b739b0fa1e41cba0b3bccb8e01a282.gif)
+
 ## 新增细节
 
 ### css预处理器

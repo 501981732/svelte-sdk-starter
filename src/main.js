@@ -24,9 +24,13 @@ if (!window[namespace]) {
     };
 }
 
-// FOR TEST
+export default app;
+
+
+
+// for test
+// you should delete this code before you publish this sdk
 window[namespace]({
-    title: '你愁啥',
+    title: '你瞅啥',
     content: '瞅你咋地'
 })
-export default app;
