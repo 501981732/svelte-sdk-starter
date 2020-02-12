@@ -9,8 +9,11 @@
 ```
 git clone ...
 npm install 
-npm run dev 
-npm run doc
+使用rollup开发打包
+npm run rollup:dev 
+npm run rollup:build
+使用webpack开发打包
+npm run dev
 npm run build
 ```
 
@@ -40,8 +43,6 @@ window.XXSDK({
 
 ![image](https://pic1.58cdn.com.cn/nowater/cxnomark/n_v2e9b739b0fa1e41cba0b3bccb8e01a282.gif)
 
-## 新增细节
-
 ### css预处理器
   
     - node-sass sass
@@ -60,7 +61,9 @@ window.XXSDK({
 ### rollup svelte打通cssworkflow
   
     - svelte-preprocess
+### 开发环境启动本地服务解决跨域问题等(rollup生态有点小)
   
+    - rollup-plugin-dev
 ### eslint 
   
     - rollup-plugin-eslint 
@@ -68,9 +71,7 @@ window.XXSDK({
     - eslint-plugin-react
     - babel-eslint
   
-### 开发环境启动本地服务解决跨域问题等(rollup生态有点小)
-  
-    - rollup-plugin-dev
+
   
 ### 代码检测工具流
   
@@ -93,3 +94,4 @@ window.XXSDK({
 
     - jsdoc 由于市面上暂无svelte的解析插件（可变通改为.vue文件再使用jsdoc-vue），目前只是解析readme js
 
+### 由于rollup打包后文件有些问题，改为webpack配置

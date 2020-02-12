@@ -1,23 +1,54 @@
 {
   "name": "svelte-sdk-starter",
   "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "svelte",
+    "sdk",
+    "starter"
+  ],
+  "author": "gblw",
   "scripts": {
     "clean": "rm -rf dist/build",
-    "doc": "jsdoc -c ./jsdoc.conf.json -R ./README.md",
-    "build": "npm run clean && rollup -c && npm run doc",
-    "dev": "npm run clean && rollup -c -w",
-    "start": "sirv dist"
+    "jsdoc": "jsdoc -c ./jsdoc.conf.json -R ./README.md",
+    "eslint": "eslint --fix",
+    "rollup:build": "npm run clean && rollup -c && npm run jsdoc",
+    "rollup:dev": "npm run clean && rollup -c -w",
+    "dev": "webpack-dev-server",
+    "build": "cross-env NODE_ENV=production webpack && npm run jsdoc",
+    "arthur": "cross-env NODE_ENV=production webpack && npm run jsdoc"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,svelte,json,css,scss,md}": [
+      "prettier --single-quote --tab-width 4  --write --svelte-sort-order scripts-markup-styles ./**/*.svelte",
+
+      "git add"
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
     "@babel/plugin-transform-runtime": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
     "@babel/runtime": "^7.7.4",
     "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.0",
+    "css-loader": "^3.4.2",
     "eslint-plugin-react": "^7.16.0",
+    "file-loader": "^5.0.2",
+    "html-webpack-plugin": "^3.2.0",
     "husky": "^3.1.0",
     "jsdoc": "^3.6.3",
-    "lint-staged": "^9.4.3",
+    "lint-staged": "^9.5.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.0",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-preset-env": "^6.7.0",
@@ -32,23 +63,20 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^5.1.2",
-    "sass": "^1.23.7",
+    "sass": "^1.25.0",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3",
     "svelte": "^3.0.0",
-    "svelte-preprocess": "^3.2.6"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,svelte,json,css,scss,md}": [
-      "prettier --single-quote --tab-width 4  --write --svelte-sort-order scripts-markup-styles ./**/*.svelte",
-      "eslint --fix",
-      "git add"
-    ]
+    "svelte-loader": "^2.13.6",
+    "svelte-preprocess": "^3.4.0",
+    "url-loader": "^3.0.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
+    "postcss-loader": "^3.0.0",
     "sirv-cli": "^0.4.4"
-  }
+  },
+  "license": "ISC"
 }

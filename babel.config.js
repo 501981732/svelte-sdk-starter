@@ -1,4 +1,4 @@
-module.exports = function (api) {
+module.exports = function(api) {
     api.cache(true);
 
     return {
@@ -6,7 +6,8 @@ module.exports = function (api) {
 
         // Cache the returned value forever and don't call this function again.
         presets: [
-            [require("@babel/preset-env"),
+            [
+                require('@babel/preset-env'),
                 {
                     "useBuiltIns": "entry",
                     "corejs": 3
@@ -14,9 +15,11 @@ module.exports = function (api) {
             ]
         ],
         plugins: [
-            [
-                require("@babel/plugin-transform-runtime"),
-            ],
+            [require('@babel/plugin-syntax-dynamic-import')],
+            // [
+            //     require("@babel/plugin-transform-runtime")
+            // ],
+            [require('@babel/plugin-proposal-class-properties')]
         ]
     };
-}
+};

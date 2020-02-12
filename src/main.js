@@ -1,17 +1,12 @@
+import './polyfill/classList';
 import Component from './components/App.svelte';
-
+import './assets/css/reset.css';
 let app = null;
-
-const namespace = 'SDK'
-
 let defaultProps = {
-    title: '',
-    content: '',
     callback: () => {}
 };
-
-if (!window[namespace]) {
-    window[namespace] = function(props) {
+if (!window.XXSDK) {
+    window.XXSDK = function(props) {
         // Creating a component
         app = new Component({
             target: document.body,
@@ -24,13 +19,6 @@ if (!window[namespace]) {
     };
 }
 
+window.XXSDK({});
+
 export default app;
-
-
-
-// for test
-// you should delete this code before you publish this sdk
-window[namespace]({
-    title: '你瞅啥',
-    content: '瞅你咋地'
-})
