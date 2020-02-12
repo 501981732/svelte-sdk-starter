@@ -9,10 +9,10 @@
 ```
 git clone ...
 npm install 
-使用rollup开发打包
+<!-- use rollup -->
 npm run rollup:dev 
 npm run rollup:build
-使用webpack开发打包
+<!-- use webpack -->
 npm run dev
 npm run build
 ```
@@ -95,3 +95,6 @@ window.XXSDK({
     - jsdoc 由于市面上暂无svelte的解析插件（可变通改为.vue文件再使用jsdoc-vue），目前只是解析readme js
 
 ### 由于rollup打包后文件有些问题，改为webpack配置
+
+### todo
+- 代码检查工具流优化 pretter+eslint结合
