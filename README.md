@@ -7,7 +7,7 @@
 ## useage
 
 ```
-git clone ...
+npx degit 501981732/svelte-sdk-starter demo
 npm install 
 <!-- use rollup -->
 npm run rollup:dev 
