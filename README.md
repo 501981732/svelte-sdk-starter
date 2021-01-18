@@ -31,11 +31,18 @@ dist/jsdoc/svelte-sdk-starter/1.0.0/index.html
 ## XXSDK
 
 ```
-@param path {String} 
-@return  a client-side component
-window.XXSDK({
-    callback: () => {}
+let insert = null
+
+window.customTaskSDK({
+    text: '',
+    insert: new window.customTaskSDK.PromiseToken(function executor(c) {
+        insert = c;
+    })
 });
+<!-- 某个moment修改文案 -->
+insert({
+    text: '222'
+})
 
 ```
 

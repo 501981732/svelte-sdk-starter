@@ -10,12 +10,22 @@
     let toastInfo = null;
     let toastTimer = null;
     export let callback;
+    export let text;
+    export let insert;
 
     onMount(init);
 
     function init() {
-        if (!document.getElementById('login-alert')) {
-            show = true;
+        show = true;
+        if (insert) {
+            insert.promise.then(data => {
+                if (data && data.text) {
+                    text = data.text;
+                }
+                if (data && data.taskId) {
+                    taskId = data.taskId;
+                }
+            });
         }
     }
 

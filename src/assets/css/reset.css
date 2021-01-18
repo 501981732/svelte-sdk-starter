@@ -36,6 +36,7 @@ strong,
 sub,
 sup,
 tt,
+var,
 b,
 u,
 i,
@@ -81,8 +82,6 @@ video {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
 }
 
@@ -101,21 +100,6 @@ section {
     display: block;
 }
 
-body {
-    -webkit-text-size-adjust: none;
-    min-height: 100%;
-    /*滚动不顺畅*/
-    -webkit-overflow-scrolling: touch;
-    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-        'Hiragino Sans GB', 'Microsoft YaHei', Helvetica, '\5B8B\4F53',
-        sans-serif;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
-html,
-body {
-    height: 100%;
-}
 ol,
 ul {
     list-style: none;
