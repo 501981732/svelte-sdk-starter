@@ -20,7 +20,7 @@ const createComponent = function(props) {
         }
     });
     app.PromiseToken = PromiseToken;
-    return app;
+    // return app;
 };
 if (!window.customTaskSDK) {
     window.customTaskSDK = Singleton(createComponent);
